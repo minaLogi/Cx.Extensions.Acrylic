@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
 		<!--Windows-->
-		<OutputPath>C:\Users\corte\AppData\Roaming\BEditor\plugins\Cx.Extensions.Acrylic</OutputPath>
+		<OutputPath>..\..\..\..\..\AppData\Roaming\BEditor\plugins\Cx.Extensions.Acrylic</OutputPath>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 		<CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
