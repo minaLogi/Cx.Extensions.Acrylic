@@ -37,7 +37,7 @@ namespace Cx.Extensions.Acrylic
         [AllowNull]
         public EaseProperty Alpha { get; private set; }
         //public CheckProperty UsePreset { get; private set; }
-        public SelectorProperty Preset { get; private set; }
+        //public SelectorProperty Preset { get; private set; }
         [AllowNull]
         public Coordinate Coordinate { get; private set; }
         public override string Name => "アクリル効果";
@@ -65,8 +65,6 @@ namespace Cx.Extensions.Acrylic
             Mat OM = new Mat();
             Cv2.AddWeighted(new Mat(imgM, rect), a, ParentImgM, 1 - a, 0, OM);
             args.Value = ToImage(OM);
-            image = args.Value.MakeBorder(args.Value.Width, args.Value.Height);
-            args.Value = image;
             Cv.GaussianBlur(args.Value, new BEditor.Drawing.Size(b, b), 0, 0);
         }
         public override IEnumerable<PropertyElement> GetProperties()
