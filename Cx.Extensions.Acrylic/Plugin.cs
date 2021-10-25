@@ -10,7 +10,7 @@ using System.IO;
 namespace Cx.Extensions.Acrylic
 {
     public class Plugin : PluginObject
-    { 
+    {
         private SettingRecord _settings;
         public Plugin(PluginConfig config) : base(config)
         { }

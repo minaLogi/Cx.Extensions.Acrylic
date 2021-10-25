@@ -31,7 +31,7 @@ namespace Cx.Extensions.Acrylic
             owner => owner.Alpha,
             (owner, obj) => owner.Alpha = obj,
             EditingPropertyOptions<EaseProperty>.Create(new EasePropertyMetadata("透明度", max : 100, min : 0)).Serialize());
-        
+
         [AllowNull]
         public EaseProperty BlurLevel { get; private set; }
         [AllowNull]
