@@ -8,7 +8,6 @@ using BEditor.Data.Property;
 using BEditor.Drawing;
 using BEditor.Drawing.Pixel;
 using OpenCvSharp;
-using BEditor.Graphics;
 
 namespace Cx.Extensions.Acrylic
 {
@@ -31,7 +30,7 @@ namespace Cx.Extensions.Acrylic
             owner => owner.Alpha,
             (owner, obj) => owner.Alpha = obj,
             EditingPropertyOptions<EaseProperty>.Create(new EasePropertyMetadata("透明度", max : 100, min : 0)).Serialize());
-        
+
         [AllowNull]
         public EaseProperty BlurLevel { get; private set; }
         [AllowNull]
@@ -58,6 +57,7 @@ namespace Cx.Extensions.Acrylic
             args.Value = image;
             Image.Mask(args.Value, ParentImage, 
                 new PointF(x, y), 0, false);
+            Cv.GaussianBlur(args.Value, new BEditor.Drawing.Size(b, b), 0, 0);
             Mat ParentImgM = ToMat(ParentImage);
             Mat imgM = ToMat(args.Value);
             var rect = new Rect((int)((imgM.Width - ParentImgM.Width) /2), 
@@ -65,7 +65,6 @@ namespace Cx.Extensions.Acrylic
             Mat OM = new Mat();
             Cv2.AddWeighted(new Mat(imgM, rect), a, ParentImgM, 1 - a, 0, OM);
             args.Value = ToImage(OM);
-            Cv.GaussianBlur(args.Value, new BEditor.Drawing.Size(b, b), 0, 0);
         }
         public override IEnumerable<PropertyElement> GetProperties()
         {

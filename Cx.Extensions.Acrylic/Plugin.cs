@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using BEditor.Data;
 using BEditor.Plugin;
-using BEditor;
 
 using System.IO;
 
 namespace Cx.Extensions.Acrylic
 {
     public class Plugin : PluginObject
-    { 
+    {
         private SettingRecord _settings;
         public Plugin(PluginConfig config) : base(config)
         { }
