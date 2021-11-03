@@ -8,11 +8,18 @@ using BEditor.Drawing;
 using BEditor.Drawing.Pixel;
 using BEditor.Graphics;
 using System.Linq;
+using System.Numerics;
 
 namespace Cx.Extensions.Acrylic
 {
     public class AcrylicEffect : ImageEffect
     {
+        public static readonly DirectProperty<AcrylicEffect, Coordinate> CoordinateProperty = EditingProperty.RegisterDirect<Coordinate, AcrylicEffect>(
+            nameof(Coordinate),
+            owner => owner.Coordinate,
+            (owner, obj) => owner.Coordinate = obj,
+            EditingPropertyOptions<Coordinate>.Create(new CoordinateMetadata("座標")).Serialize());
+
         public static readonly DirectProperty<AcrylicEffect, EaseProperty> BlurLevelProperty = EditingProperty.RegisterDirect<EaseProperty, AcrylicEffect>(
             nameof(BlurLevel),
             owner => owner.BlurLevel,
@@ -23,8 +30,10 @@ namespace Cx.Extensions.Acrylic
             nameof(Alpha),
             owner => owner.Alpha,
             (owner, obj) => owner.Alpha = obj,
-            EditingPropertyOptions<EaseProperty>.Create(new EasePropertyMetadata("透明度", max: 100, min: 0)).Serialize());
+            EditingPropertyOptions<EaseProperty>.Create(new EasePropertyMetadata("不透明度", max: 100, min: 0)).Serialize());
 
+        [AllowNull]
+        public Coordinate Coordinate { get; private set; }
         [AllowNull]
         public EaseProperty BlurLevel { get; private set; }
         [AllowNull]
@@ -46,21 +55,26 @@ namespace Cx.Extensions.Acrylic
             var f = args.Frame;
             var b = BlurLevel.GetValue(f);
             Image<BGRA32> image = texture.ToImage();
-            var t = Texture.FromImage(image).Transform.Coordinate;
+            var i = Texture.FromImage(image);
             Image<BGRA32> BgTexture = new Image<BGRA32>(p.Width, p.Height);
             p.GraphicsContext.ReadImage(BgTexture);
+            Coordinate c = GetValue(CoordinateProperty);
             Cv.GaussianBlur(BgTexture, new Size((int)b,(int)b), 0, 0);
-            BgTexture.Mask(image, new PointF(t.X, t.Y), 0, false);
+            BgTexture.Mask(image, new PointF(c.X.GetValue(f), c.Y.GetValue(f)), 0, false);
             image.SetOpacity(Alpha.GetValue(f)/100);
             var result = new Texture[2];
             var bg = Texture.FromImage(BgTexture);
             var im = Texture.FromImage(image);
+            var t = im.Transform;
+            t.Position += new Vector3(c.X.GetValue(f), c.Y.GetValue(f), c.Z.GetValue(f));
+            im.Transform = t;
             result[0] = bg;
             result[1] = im;
             return result;
         }
         public override IEnumerable<PropertyElement> GetProperties()
         {
+            yield return Coordinate;
             yield return BlurLevel;
             yield return Alpha;
         }
