@@ -1,9 +1,6 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
-		<!--Windows-->
-		<!--<OutputPath>..\..\..\..\..\AppData\Roaming\BEditor\plugins\Cx.Extensions.Acrylic</OutputPath>-->
 		<OutputPath>.\built</OutputPath>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
@@ -12,21 +9,13 @@
 		<Authors>Cx</Authors>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	</PropertyGroup>
-
 	<PropertyGroup Condition="'$(Configuration)'=='Debug'">
 		<Optimize>false</Optimize>
 	</PropertyGroup>
-
 	<ItemGroup>
-		<PackageReference Include="BEditor.Audio" Version="0.2.0" />
-		<PackageReference Include="BEditor.Base" Version="0.2.0" />
 		<PackageReference Include="BEditor.Compute" Version="0.2.0" />
 		<PackageReference Include="BEditor.Core" Version="0.2.0" />
 		<PackageReference Include="BEditor.Drawing" Version="0.2.0" />
 		<PackageReference Include="BEditor.Graphics" Version="0.2.0" />
-		<PackageReference Include="BEditor.Media" Version="0.2.0" />
-		<PackageReference Include="BEditor.Packaging" Version="0.2.0" />
-		<PackageReference Include="BEditor.Settings" Version="0.2.0" />
 	</ItemGroup>
-
 </Project>
