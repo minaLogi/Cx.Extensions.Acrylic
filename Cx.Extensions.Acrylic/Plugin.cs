@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using BEditor.Data;
 using BEditor.Plugin;
+using BEditor;
 
 using System.IO;
 

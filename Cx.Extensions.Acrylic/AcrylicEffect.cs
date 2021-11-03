@@ -8,17 +8,13 @@ using BEditor.Data.Property;
 using BEditor.Drawing;
 using BEditor.Drawing.Pixel;
 using OpenCvSharp;
+using BEditor.Graphics;
+using System.Linq;
 
 namespace Cx.Extensions.Acrylic
 {
     public class AcrylicEffect : ImageEffect
     {
-        public static readonly DirectProperty<AcrylicEffect, Coordinate> CoordinateProperty = EditingProperty.RegisterDirect<Coordinate, AcrylicEffect>(
-            nameof(Coordinate),
-            owner => owner.Coordinate,
-            (owner, obj) => owner.Coordinate = obj,
-            EditingPropertyOptions<Coordinate>.Create(new CoordinateMetadata("座標")).Serialize());
-
         public static readonly DirectProperty<AcrylicEffect, EaseProperty> BlurLevelProperty = EditingProperty.RegisterDirect<EaseProperty, AcrylicEffect>(
             nameof(BlurLevel),
             owner => owner.BlurLevel,
@@ -29,7 +25,7 @@ namespace Cx.Extensions.Acrylic
             nameof(Alpha),
             owner => owner.Alpha,
             (owner, obj) => owner.Alpha = obj,
-            EditingPropertyOptions<EaseProperty>.Create(new EasePropertyMetadata("透明度", max : 100, min : 0)).Serialize());
+            EditingPropertyOptions<EaseProperty>.Create(new EasePropertyMetadata("透明度", max: 100, min: 0)).Serialize());
 
         [AllowNull]
         public EaseProperty BlurLevel { get; private set; }
@@ -43,32 +39,34 @@ namespace Cx.Extensions.Acrylic
 
         public override void Apply(EffectApplyArgs<Image<BGRA32>> args)
         {
-            int f = args.Frame;
-            Scene scene = Parent.Parent;
-            Image<BGRA32> image = new Image<BGRA32>(scene.Width, scene.Height);
-            Image<BGRA32> ParentImage = args.Value;
-            int b = (int)BlurLevel.GetValue(f);
-            float a = Alpha.GetValue(f)/100;
-            Coordinate p = GetValue(CoordinateProperty);
-            float x = p.X.GetValue(f);
-            float y = p.Y.GetValue(f);
+        }
 
-            scene.GraphicsContext?.ReadImage(image);
-            args.Value = image;
-            Image.Mask(args.Value, ParentImage, 
-                new PointF(x, y), 0, false);
-            Cv.GaussianBlur(args.Value, new BEditor.Drawing.Size(b, b), 0, 0);
-            Mat ParentImgM = ToMat(ParentImage);
-            Mat imgM = ToMat(args.Value);
-            var rect = new Rect((int)((imgM.Width - ParentImgM.Width) /2), 
-                (int)((imgM.Height - ParentImgM.Height) /2), ParentImgM.Width, ParentImgM.Height);
-            Mat OM = new Mat();
-            Cv2.AddWeighted(new Mat(imgM, rect), a, ParentImgM, 1 - a, 0, OM);
-            args.Value = ToImage(OM);
+        public override void Apply(EffectApplyArgs<IEnumerable<Texture>> args)
+        {
+            args.Value = args.Value.SelectMany(i => Selector(i, args));
+        }
+        private IEnumerable<Texture> Selector(Texture texture, EffectApplyArgs args)
+        {
+            var frame = args.Frame;
+            var p = Parent.Parent;
+            var f = args.Frame;
+            var b = BlurLevel.GetValue(f);
+            Image<BGRA32> image = texture.ToImage();
+            var t = Texture.FromImage(image).Transform.Coordinate;
+            Image<BGRA32> BgTexture = new Image<BGRA32>(p.Width, p.Height);
+            p.GraphicsContext.ReadImage(BgTexture);
+            Cv.GaussianBlur(BgTexture, new BEditor.Drawing.Size((int)b,(int)b), 0, 0);
+            BgTexture.Mask(image, new PointF(t.X, t.Y), 0, false);
+            image.SetOpacity(Alpha.GetValue(f)/100);
+            var result = new Texture[2];
+            var bg = Texture.FromImage(BgTexture);
+            var im = Texture.FromImage(image);
+            result[0] = bg;
+            result[1] = im;
+            return result;
         }
         public override IEnumerable<PropertyElement> GetProperties()
         {
-            yield return Coordinate;
             yield return BlurLevel;
             yield return Alpha;
         }
@@ -78,11 +76,6 @@ namespace Cx.Extensions.Acrylic
             {
                 return new Mat(image.Height, image.Width, MatType.CV_8UC4, (IntPtr)ptr);
             }
-        }
-
-        private static unsafe Image<BGRA32> ToImage(Mat mat)
-        {
-            return new Image<BGRA32>(mat.Width, mat.Height, mat.Data);
         }
     }
 }

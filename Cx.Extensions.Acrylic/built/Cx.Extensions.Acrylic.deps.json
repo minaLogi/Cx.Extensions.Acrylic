@@ -1,0 +1,742 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Cx.Extensions.Acrylic/0.1.0": {
+        "dependencies": {
+          "BEditor.Audio": "0.2.0",
+          "BEditor.Base": "0.2.0",
+          "BEditor.Compute": "0.2.0",
+          "BEditor.Core": "0.2.0",
+          "BEditor.Drawing": "0.2.0",
+          "BEditor.Graphics": "0.2.0",
+          "BEditor.Media": "0.2.0",
+          "BEditor.Packaging": "0.2.0",
+          "BEditor.Settings": "0.2.0"
+        },
+        "runtime": {
+          "Cx.Extensions.Acrylic.dll": {}
+        }
+      },
+      "BEditor.Audio/0.2.0": {
+        "dependencies": {
+          "BEditor.Media": "0.2.0",
+          "OpenTK.OpenAL": "4.6.4",
+          "Vortice.XAudio2": "1.9.87"
+        },
+        "runtime": {
+          "lib/net5.0/BEditor.Audio.dll": {
+            "assemblyVersion": "0.2.0.0",
+            "fileVersion": "0.2.0.0"
+          }
+        },
+        "resources": {
+          "lib/net5.0/ja-JP/BEditor.Audio.resources.dll": {
+            "locale": "ja-JP"
+          }
+        }
+      },
+      "BEditor.Base/0.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "5.0.2",
+          "Microsoft.Extensions.Logging": "5.0.0",
+          "System.Reactive": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/BEditor.Base.dll": {
+            "assemblyVersion": "0.2.0.0",
+            "fileVersion": "0.2.0.0"
+          }
+        },
+        "resources": {
+          "lib/net5.0/ja-JP/BEditor.Base.resources.dll": {
+            "locale": "ja-JP"
+          }
+        }
+      },
+      "BEditor.Compute/0.2.0": {
+        "runtime": {
+          "lib/net5.0/BEditor.Compute.dll": {
+            "assemblyVersion": "0.2.0.0",
+            "fileVersion": "0.2.0.0"
+          }
+        }
+      },
+      "BEditor.Core/0.2.0": {
+        "dependencies": {
+          "BEditor.Audio": "0.2.0",
+          "BEditor.Base": "0.2.0",
+          "BEditor.Drawing": "0.2.0",
+          "BEditor.Graphics": "0.2.0",
+          "BEditor.Media": "0.2.0",
+          "BEditor.Settings": "0.2.0"
+        },
+        "runtime": {
+          "lib/net5.0/BEditor.Core.dll": {
+            "assemblyVersion": "0.2.0.0",
+            "fileVersion": "0.2.0.0"
+          }
+        },
+        "resources": {
+          "lib/net5.0/ja-JP/BEditor.Core.resources.dll": {
+            "locale": "ja-JP"
+          }
+        }
+      },
+      "BEditor.Drawing/0.2.0": {
+        "dependencies": {
+          "BEditor.Compute": "0.2.0",
+          "BEditor.Settings": "0.2.0",
+          "OpenCvSharp4": "4.5.3.20210817",
+          "OpenCvSharp4.runtime.centos7-x64": "4.0.0.20190129",
+          "OpenCvSharp4.runtime.osx.10.15-x64": "4.5.3.20210817",
+          "OpenCvSharp4.runtime.ubuntu.18.04-x64": "4.5.3.20210817",
+          "OpenCvSharp4.runtime.win": "4.5.3.20210817",
+          "SkiaSharp": "2.80.3",
+          "SkiaSharp.NativeAssets.Linux": "2.80.3"
+        },
+        "runtime": {
+          "lib/net5.0/BEditor.Drawing.dll": {
+            "assemblyVersion": "0.2.0.0",
+            "fileVersion": "0.2.0.0"
+          }
+        },
+        "resources": {
+          "lib/net5.0/ja-JP/BEditor.Drawing.resources.dll": {
+            "locale": "ja-JP"
+          }
+        }
+      },
+      "BEditor.Graphics/0.2.0": {
+        "dependencies": {
+          "BEditor.Drawing": "0.2.0"
+        },
+        "runtime": {
+          "lib/net5.0/BEditor.Graphics.dll": {
+            "assemblyVersion": "0.2.0.0",
+            "fileVersion": "0.2.0.0"
+          }
+        },
+        "resources": {
+          "lib/net5.0/ja-JP/BEditor.Graphics.resources.dll": {
+            "locale": "ja-JP"
+          }
+        }
+      },
+      "BEditor.Media/0.2.0": {
+        "dependencies": {
+          "BEditor.Drawing": "0.2.0"
+        },
+        "runtime": {
+          "lib/net5.0/BEditor.Media.dll": {
+            "assemblyVersion": "0.2.0.0",
+            "fileVersion": "0.2.0.0"
+          }
+        },
+        "resources": {
+          "lib/net5.0/ja-JP/BEditor.Media.resources.dll": {
+            "locale": "ja-JP"
+          }
+        }
+      },
+      "BEditor.Packaging/0.2.0": {
+        "dependencies": {
+          "BEditor.Base": "0.2.0"
+        },
+        "runtime": {
+          "lib/net5.0/BEditor.Packaging.dll": {
+            "assemblyVersion": "0.2.0.0",
+            "fileVersion": "0.2.0.0"
+          }
+        }
+      },
+      "BEditor.Settings/0.2.0": {
+        "dependencies": {
+          "BEditor.Base": "0.2.0",
+          "BEditor.Packaging": "0.2.0",
+          "Microsoft.Extensions.Logging": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/BEditor.Settings.dll": {
+            "assemblyVersion": "0.2.0.0",
+            "fileVersion": "0.2.0.0"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/5.0.2": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "5.0.0.1",
+            "fileVersion": "5.0.821.31504"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/5.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging/5.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "5.0.2",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Options": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Extensions.Logging.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/5.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "Microsoft.Extensions.Options/5.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Primitives": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.Extensions.Options.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "Microsoft.Extensions.Primitives/5.0.0": {
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.Extensions.Primitives.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "Microsoft.NETCore.Platforms/5.0.0": {},
+      "Microsoft.Win32.SystemEvents/5.0.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "OpenCvSharp4/4.5.3.20210817": {
+        "dependencies": {
+          "System.Drawing.Common": "5.0.2",
+          "System.Memory": "4.5.4",
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/OpenCvSharp.Extensions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/netcoreapp2.1/OpenCvSharp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "OpenCvSharp4.runtime.centos7-x64/4.0.0.20190129": {
+        "runtimeTargets": {
+          "runtimes/centos7-x64/native/libOpenCvSharpExtern.so": {
+            "rid": "centos7-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "OpenCvSharp4.runtime.osx.10.15-x64/4.5.3.20210817": {
+        "runtimeTargets": {
+          "runtimes/osx-x64/native/libOpenCvSharpExtern.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "OpenCvSharp4.runtime.ubuntu.18.04-x64/4.5.3.20210817": {
+        "runtimeTargets": {
+          "runtimes/ubuntu.18.04-x64/native/libOpenCvSharpExtern.so": {
+            "rid": "ubuntu.18.04-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "OpenCvSharp4.runtime.win/4.5.3.20210817": {
+        "runtimeTargets": {
+          "runtimes/win-x64/native/OpenCvSharpExtern.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/opencv_videoio_ffmpeg453_64.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "2021.6.0.0"
+          },
+          "runtimes/win-x86/native/OpenCvSharpExtern.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/opencv_videoio_ffmpeg453.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "2021.6.0.0"
+          }
+        }
+      },
+      "OpenTK.Core/4.6.4": {
+        "runtime": {
+          "lib/netstandard2.1/OpenTK.Core.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "OpenTK.Mathematics/4.6.4": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OpenTK.Mathematics.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "OpenTK.OpenAL/4.6.4": {
+        "dependencies": {
+          "OpenTK.Core": "4.6.4",
+          "OpenTK.Mathematics": "4.6.4"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/OpenTK.OpenAL.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "SharpGen.Runtime/2.0.0-beta.9": {
+        "runtime": {
+          "lib/net5.0/SharpGen.Runtime.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "SharpGen.Runtime.COM/2.0.0-beta.9": {
+        "dependencies": {
+          "SharpGen.Runtime": "2.0.0-beta.9"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SharpGen.Runtime.COM.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "SkiaSharp/2.80.3": {
+        "dependencies": {
+          "System.Memory": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SkiaSharp.dll": {
+            "assemblyVersion": "2.80.0.0",
+            "fileVersion": "2.80.3.0"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/osx/native/libSkiaSharp.dylib": {
+            "rid": "osx",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-arm64/native/libSkiaSharp.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/libSkiaSharp.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/libSkiaSharp.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.Linux/2.80.3": {
+        "dependencies": {
+          "SkiaSharp": "2.80.3"
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libSkiaSharp.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libSkiaSharp.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/libSkiaSharp.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libSkiaSharp.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "System.Drawing.Common/5.0.2": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "5.0.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "5.0.0.2",
+            "fileVersion": "5.0.421.11614"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "rid": "unix",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.2",
+            "fileVersion": "5.0.421.11614"
+          },
+          "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.2",
+            "fileVersion": "5.0.421.11614"
+          }
+        }
+      },
+      "System.Memory/4.5.4": {},
+      "System.Reactive/5.0.0": {
+        "runtime": {
+          "lib/net5.0/System.Reactive.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.1"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/5.0.0": {},
+      "Vortice.Multimedia/1.9.87": {
+        "dependencies": {
+          "SharpGen.Runtime": "2.0.0-beta.9"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Vortice.Multimedia.dll": {
+            "assemblyVersion": "1.9.0.0",
+            "fileVersion": "1.9.87.25353"
+          }
+        }
+      },
+      "Vortice.XAudio2/1.9.87": {
+        "dependencies": {
+          "SharpGen.Runtime": "2.0.0-beta.9",
+          "SharpGen.Runtime.COM": "2.0.0-beta.9",
+          "Vortice.Multimedia": "1.9.87"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Vortice.XAudio2.dll": {
+            "assemblyVersion": "1.9.0.0",
+            "fileVersion": "1.9.87.25353"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Cx.Extensions.Acrylic/0.1.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BEditor.Audio/0.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4858pF5ERs0Dlk1nTc3NJ63QxgRGrNu1GzhynYtXvj0nMZDWR2e5udTckIUIhg55d36e5v0p9fDZp4d0NMFu2A==",
+      "path": "beditor.audio/0.2.0",
+      "hashPath": "beditor.audio.0.2.0.nupkg.sha512"
+    },
+    "BEditor.Base/0.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YzqA7U9hAAQ0d6ZTqII1w1Ss5PWbFRB96NX/n5SU7RqF34rredEqHiud6x/9lhAscur7KgWgHef/zvJKPFIxQA==",
+      "path": "beditor.base/0.2.0",
+      "hashPath": "beditor.base.0.2.0.nupkg.sha512"
+    },
+    "BEditor.Compute/0.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-heS1Y0pipdWOpJU6+RwWaoWHXkL3lrqCmTC3EtWk/BvTBBaEhb32dH3ZD1Mp9H4khdyvg9lZcoqf0SHUBxcWlQ==",
+      "path": "beditor.compute/0.2.0",
+      "hashPath": "beditor.compute.0.2.0.nupkg.sha512"
+    },
+    "BEditor.Core/0.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cfFV6eUshs8bAN6IxfCVgSfHW6UEJbZi0sCENxFn1mrNTeCKKgYK2jfb0DmoqU9JRazVIgCQ0EJP6mizr9G3Vw==",
+      "path": "beditor.core/0.2.0",
+      "hashPath": "beditor.core.0.2.0.nupkg.sha512"
+    },
+    "BEditor.Drawing/0.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nhPfyxFEmEbAPL8QcIsmRrf/mqPJ2CteR16O3G3foBAglihj0YsPhOMelR1Z+JwJXt75ZXwV6gDtc7XiPwlpVQ==",
+      "path": "beditor.drawing/0.2.0",
+      "hashPath": "beditor.drawing.0.2.0.nupkg.sha512"
+    },
+    "BEditor.Graphics/0.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AgsRg1fn06qGpz+QYQTEgTz+QGUuLzYMj0gomXF61FyLw/Pa6B7ebxlc3LadkV/gYN9kTU+PrN75KRqBrm2FTw==",
+      "path": "beditor.graphics/0.2.0",
+      "hashPath": "beditor.graphics.0.2.0.nupkg.sha512"
+    },
+    "BEditor.Media/0.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CpbCyisoW+8l68e+aAovtResfHgmqz994Q4uyxm6ZmtDFJtrhfGGAhHambT4CEXauL41lWj1HGkQuzdnoIh6TQ==",
+      "path": "beditor.media/0.2.0",
+      "hashPath": "beditor.media.0.2.0.nupkg.sha512"
+    },
+    "BEditor.Packaging/0.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-O6dcOSImvs+ZuUe/5pRbxkAX6lNdUSENPwtad1Qb94OkC8c3TfKatl7Bx4lqV6IRyP/q0vS3CtcCxN8lDMtXvg==",
+      "path": "beditor.packaging/0.2.0",
+      "hashPath": "beditor.packaging.0.2.0.nupkg.sha512"
+    },
+    "BEditor.Settings/0.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3Dh/hCSKmsz5jlm7VltPsGSgJ252ekHzDTyukArOIaIxa/0g7fPXxfugkS/52X6lwQBvUQaTi0LsO1S6wiL0Kg==",
+      "path": "beditor.settings/0.2.0",
+      "hashPath": "beditor.settings.0.2.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection/5.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xzFW00AZEvOXM1OX+0+AYH5op/Hf3u//e6wszBd/rK72sypD+jx5CtsHxM4BVuFBEs8SajfO4QzSJtrQaHDr4A==",
+      "path": "microsoft.extensions.dependencyinjection/5.0.2",
+      "hashPath": "microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ORj7Zh81gC69TyvmcUm9tSzytcy8AVousi+IVRAI8nLieQjOFryRusSFh7+aLk16FN9pQNqJAiMd7BTKINK0kA==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/5.0.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MgOwK6tPzB6YNH21wssJcw/2MKwee8b2gI7SllYfn6rvTpIrVvVS5HAjSU2vqSku1fwqRvWP0MdIi14qjd93Aw==",
+      "path": "microsoft.extensions.logging/5.0.0",
+      "hashPath": "microsoft.extensions.logging.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging.Abstractions/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NxP6ahFcBnnSfwNBi2KH2Oz8Xl5Sm2krjId/jRR3I7teFphwiUoUeZPwTNA21EX+5PtjqmyAvKaOeBXcJjcH/w==",
+      "path": "microsoft.extensions.logging.abstractions/5.0.0",
+      "hashPath": "microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Options/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CBvR92TCJ5uBIdd9/HzDSrxYak+0W/3+yxrNg8Qm6Bmrkh5L+nu6m3WeazQehcZ5q1/6dDA7J5YdQjim0165zg==",
+      "path": "microsoft.extensions.options/5.0.0",
+      "hashPath": "microsoft.extensions.options.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Primitives/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cI/VWn9G1fghXrNDagX9nYaaB/nokkZn0HYAawGaELQrl8InSezfe9OnfPZLcJq3esXxygh3hkq2c3qoV3SDyQ==",
+      "path": "microsoft.extensions.primitives/5.0.0",
+      "hashPath": "microsoft.extensions.primitives.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VyPlqzH2wavqquTcYpkIIAQ6WdenuKoFN0BdYBbCWsclXacSOHNQn66Gt4z5NBqEYW0FAPm5rlvki9ZiCij5xQ==",
+      "path": "microsoft.netcore.platforms/5.0.0",
+      "hashPath": "microsoft.netcore.platforms.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Bh6blKG8VAKvXiLe2L+sEsn62nc1Ij34MrNxepD2OCrS5cpCwQa9MeLyhVQPQ/R4Wlzwuy6wMK8hLb11QPDRsQ==",
+      "path": "microsoft.win32.systemevents/5.0.0",
+      "hashPath": "microsoft.win32.systemevents.5.0.0.nupkg.sha512"
+    },
+    "OpenCvSharp4/4.5.3.20210817": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LeTZ9634aGRTWhJxz75Xciq05aS2HxC25ECEQXNd0T7FROCI8GDDp5xAQ4XPmW5mwLWjRqd9h05XmN8bqju06A==",
+      "path": "opencvsharp4/4.5.3.20210817",
+      "hashPath": "opencvsharp4.4.5.3.20210817.nupkg.sha512"
+    },
+    "OpenCvSharp4.runtime.centos7-x64/4.0.0.20190129": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mcqC8t4A7BUFnHLWuEWlnpwQoxS3rA3ZBxLGM4wRoibKzEJAnh4MNh98f37jxehTQ2H4VrudR+g0KgDlvSWLrw==",
+      "path": "opencvsharp4.runtime.centos7-x64/4.0.0.20190129",
+      "hashPath": "opencvsharp4.runtime.centos7-x64.4.0.0.20190129.nupkg.sha512"
+    },
+    "OpenCvSharp4.runtime.osx.10.15-x64/4.5.3.20210817": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DOim4qs9/ySXfOYwMFf4tbgKxuTLfab2Vd1nVjHDxmnga5MBbmTNz5eiyoPsTIc6+8ndbQ5kRZfcrlsb7ZeCng==",
+      "path": "opencvsharp4.runtime.osx.10.15-x64/4.5.3.20210817",
+      "hashPath": "opencvsharp4.runtime.osx.10.15-x64.4.5.3.20210817.nupkg.sha512"
+    },
+    "OpenCvSharp4.runtime.ubuntu.18.04-x64/4.5.3.20210817": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bi4eoTHCyJ21Y/2pVGItWYT3Fd3S//VAhGK3YrVNsWYeViOLr0hjyL//EQ1kDeXml8yhH6Fj06o6O1zwJYzWAQ==",
+      "path": "opencvsharp4.runtime.ubuntu.18.04-x64/4.5.3.20210817",
+      "hashPath": "opencvsharp4.runtime.ubuntu.18.04-x64.4.5.3.20210817.nupkg.sha512"
+    },
+    "OpenCvSharp4.runtime.win/4.5.3.20210817": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-q2PknNPPAJHjVEsrgdHtWVHzZsNlANnkj2SCw4DC/x8qeAX+Skp93KPLVoELNyU415P7RyjDHn7CGLSpNpltyQ==",
+      "path": "opencvsharp4.runtime.win/4.5.3.20210817",
+      "hashPath": "opencvsharp4.runtime.win.4.5.3.20210817.nupkg.sha512"
+    },
+    "OpenTK.Core/4.6.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YVEhUKypNHfhGe0I9ZF5Bb8YExxuo8YNvFGDczGPaI9KfESPSNxIfRVsTlWRD7Uoe+kJ7iMOanv+dCiW0UybDA==",
+      "path": "opentk.core/4.6.4",
+      "hashPath": "opentk.core.4.6.4.nupkg.sha512"
+    },
+    "OpenTK.Mathematics/4.6.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6rsM2u8JKwKIBzv6aYb9yFXfQKfjRIUkVLHGVDRrXFDnQe5UwsFVsKaOc/0oazqirYu/+oNI5bAUj0tNwPu/+g==",
+      "path": "opentk.mathematics/4.6.4",
+      "hashPath": "opentk.mathematics.4.6.4.nupkg.sha512"
+    },
+    "OpenTK.OpenAL/4.6.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5u1GIE93nWXOX0NpneGbbiZxCtIC1QnrvqTRbh0SYISeFUt6KN7jGMaRRVJ5H35LM2+Gx3LfUo+gqOZClU5EDw==",
+      "path": "opentk.openal/4.6.4",
+      "hashPath": "opentk.openal.4.6.4.nupkg.sha512"
+    },
+    "SharpGen.Runtime/2.0.0-beta.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FFbM9kkmV79tp02etSmqBeUxxtQkvIcn1WTP4kTHSBo/UfHNjtj64fTPnWuscLuY9cL8QX/HsTlCT9xYpLf/Eg==",
+      "path": "sharpgen.runtime/2.0.0-beta.9",
+      "hashPath": "sharpgen.runtime.2.0.0-beta.9.nupkg.sha512"
+    },
+    "SharpGen.Runtime.COM/2.0.0-beta.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pmmx1mFo/OImruk5xZWyeE0Bk8WJUYzAwvtQCxblQVccX9z1+3q1hidmZizy2c/Gwyc4PGSWf/PX/fJyh+G+9A==",
+      "path": "sharpgen.runtime.com/2.0.0-beta.9",
+      "hashPath": "sharpgen.runtime.com.2.0.0-beta.9.nupkg.sha512"
+    },
+    "SkiaSharp/2.80.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qX6tGNP3+MXNYe2pKm0PCRiJ/cx+LTeLaggwZifB7sUMXhECfKKKHJq45VqZKt37xQegnCCdf1jHXwmHeJQs5Q==",
+      "path": "skiasharp/2.80.3",
+      "hashPath": "skiasharp.2.80.3.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.Linux/2.80.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LYl/mvEXrsKMdDNPVjA4ul8JDDGZI8DIkFE0a5GdhaC/aooxgwjuaXZ9NfPg4cJsRf8tb6VhGHvjSNUngNOcJw==",
+      "path": "skiasharp.nativeassets.linux/2.80.3",
+      "hashPath": "skiasharp.nativeassets.linux.2.80.3.nupkg.sha512"
+    },
+    "System.Drawing.Common/5.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rvr/M1WPf24ljpvvrVd74+NdjRUJu1bBkspkZcnzSZnmAUQWSvanlQ0k/hVHk+cHufZbZfu7vOh/vYc0q5Uu/A==",
+      "path": "system.drawing.common/5.0.2",
+      "hashPath": "system.drawing.common.5.0.2.nupkg.sha512"
+    },
+    "System.Memory/4.5.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
+      "path": "system.memory/4.5.4",
+      "hashPath": "system.memory.4.5.4.nupkg.sha512"
+    },
+    "System.Reactive/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-erBZjkQHWL9jpasCE/0qKAryzVBJFxGHVBAvgRN1bzM0q2s1S4oYREEEL0Vb+1kA/6BKb5FjUZMp5VXmy+gzkQ==",
+      "path": "system.reactive/5.0.0",
+      "hashPath": "system.reactive.5.0.0.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZD9TMpsmYJLrxbbmdvhwt9YEgG5WntEnZ/d1eH8JBX9LBp+Ju8BSBhUGbZMNVHHomWo2KVImJhTDl2hIgw/6MA==",
+      "path": "system.runtime.compilerservices.unsafe/5.0.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+    },
+    "Vortice.Multimedia/1.9.87": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-80DwT5mkWp/E/SrkkXZ/ngCzglOtcweImv7PQpE+t8maZblruzmq+v7+KesGCx2EM1PTyXk8Q9uw3eCEyNlWyg==",
+      "path": "vortice.multimedia/1.9.87",
+      "hashPath": "vortice.multimedia.1.9.87.nupkg.sha512"
+    },
+    "Vortice.XAudio2/1.9.87": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-H9ZpSnxyeEJXI856zA0DT5D/0LotZaiFd+ts77zZJ0hiq/mOx2S0RZcZVe5aHEL+aZVXAksSx0c/+FcyXjW8Qw==",
+      "path": "vortice.xaudio2/1.9.87",
+      "hashPath": "vortice.xaudio2.1.9.87.nupkg.sha512"
+    }
+  }
+}

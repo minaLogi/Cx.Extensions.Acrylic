@@ -1,9 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
 		<!--Windows-->
-		<OutputPath>..\..\..\..\..\AppData\Roaming\BEditor\plugins\Cx.Extensions.Acrylic</OutputPath>
+		<!--<OutputPath>..\..\..\..\..\AppData\Roaming\BEditor\plugins\Cx.Extensions.Acrylic</OutputPath>-->
+		<OutputPath>.\built</OutputPath>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 		<CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
