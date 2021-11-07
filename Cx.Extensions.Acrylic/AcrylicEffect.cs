@@ -7,6 +7,7 @@ using BEditor.Drawing;
 using BEditor.Drawing.Pixel;
 using BEditor.Graphics;
 using System.Linq;
+using System;
 
 namespace Cx.Extensions.Acrylic
 {
@@ -45,21 +46,22 @@ namespace Cx.Extensions.Acrylic
             var f = args.Frame;
             var b = BlurLevel.GetValue(f);
             Image<BGRA32> image = texture.ToImage();
-            var i = Texture.FromImage(image);
             Image<BGRA32> BgTexture = new Image<BGRA32>(p.Width, p.Height);
             p.GraphicsContext.ReadImage(BgTexture);
             var x = texture.Transform.Position.X;
             var y = texture.Transform.Position.Y;
-            var z = texture.Transform.Position.Z;
             Cv.GaussianBlur(BgTexture, new Size((int)b,(int)b), 0, 0);
-            BgTexture.Mask(image, new PointF(x, y), 0, false);
+            var resizedimg = image;
+            resizedimg = resizedimg.Resize((int)Math.Abs(texture.Transform.Scale.X*texture.Width),
+                (int)Math.Abs(texture.Transform.Scale.Y*texture.Height), Quality.High);
+            BgTexture.Mask(resizedimg, new PointF(x, y), 0, false);
+            resizedimg.Dispose();
             image.SetOpacity(Alpha.GetValue(f)/100);
             var result = new Texture[2];
             var bg = Texture.FromImage(BgTexture);
             var im = Texture.FromImage(image);
             var tt = texture.Transform;
             im.Transform = tt;
-            bg.Transform = tt;
             result[0] = bg;
             result[1] = im;
             return result;
